@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,700,900');
+
+// vars
+$fontPrimary: normal 400 10px/1.25 'Orbitron', sans-serif;
+
+///Breakpoints
+$mobileBreakpoint: 736px;
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0;
+
+  .braun {
+    font: $fontPrimary;
+    background-color: #333;
+    padding: 2rem 1rem 1rem;
+    height: auto;
+    width: 90%;
+    max-width: 90%;
+    border: 2px solid #181818;
+    border-radius: 10px 10px 50PX 50px;
+
+    * {
+      box-sizing: border-box;
+    }
+
+    @media screen and (min-width: $mobileBreakpoint) {
+      max-width: 350px;
+    }
+
+    .logo {
+      color: #fff;
+      font-size: calc(10px + 1vmin);
+      text-transform: uppercase;
+      margin: .5rem 0;
+    }
+
+    .screen {
+      background: #48494e;
+      border-radius: 2px;
+      box-shadow: inset 6px 0 6px rgba(0, 0, 0, 0.3), inset -6px 0 6px rgba(0, 0, 0, 0.3), inset 0 6px 6px rgba(0, 0, 0, 0.3), inset 0 -6px 6px rgba(0, 0, 0, 0.3);
+      margin: 20px auto;
+      padding: 15px 10px;
+
+      .inner-screen {
+        background: #6f7a72;
+        border: 1px solid #3b423d;
+        border-radius: 3px;
+        width: 97%;
+        margin: 0 auto;
+        padding: 1rem;
+        box-shadow: inset -10px 10px 14px rgba(255, 255, 255, 0.1), inset -10px 10px 14px rgba(255, 255, 255, 0.1);
+      }
+
+      .display {
+        color: #fff;
+        font-size: calc(10px + 2vmin);
+        text-align: right;
+        background: #c1cfb6;
+        border-radius: 10px;
+        border: 1px solid #a7bb97;
+        width: 90%;
+        margin: 0 auto;
+        padding: 5px 10px;
+        box-shadow: inset -10px 15px 4px rgba(255, 255, 255, 0.2);
+        color: #444;
+        font-weight: 900;
+      }
+    }
+
+    .keyboard {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .btn {
+        height: 50px;
+        width: 50px;
+        margin: .5rem;
+        border: 1px solid #333;
+        border-radius: 50%;
+        background-color: #000;
+        box-shadow: inset 5px 15px rgba(255, 255, 255, 0.1), 1px 5px rgba(0, 0, 0, 0.1);
+        color: #fff;
+        align-items: center;
+        font-size: calc(10px + 1vmin);
+        cursor: pointer;
+
+        &.btn-brown {
+          background-color: #351e10;
+          box-shadow: inset 5px 15px rgba(255, 255, 255, 0.05), 1px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        &.btn-yellow {
+          background-color: #fc0;
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
