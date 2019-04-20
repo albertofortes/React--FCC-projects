@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+// vars
+$fontPrimary: normal 400 10px/1.25 'Montserrat', sans-serif;
+$fontSecondary: normal 400 10px/1.25 'Bungee Inline', cursive;
+
+///Breakpoints
+$mobileBreakpoint: 736px;
+
+/* palette: https://www.colourlovers.com/fashion/trends/street-fashion/7896/Floral_Much */
+$redColor: #EA3556;
+$pinkColor: #ED146F;
+$blueColor: #61D2D6;
+$cyanColor: #9BF0E9;
+$yellowColor: #EDDE45;
+$greyColor: #EDE5E2;
+$firstColor: #415153;
+
+@keyframes bg {
+  0% {
+    background-position: 0% 50%
+  }
+  50% {
+    background-position: 100% 50%
+  }
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+@keyframes display {
+  0% {
+    font-size: calc(10px + 3vmin);
+    opacity: 1;
+  }
+  100% {
+    font-size: calc(10px + 6vmin);
+    opacity: 0;
+  }
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: $greyColor;
+  background: #333;
+  margin: 0;
+}
+
+#drum-machine {
+  display: flex;
+  height: 100vh;
+  padding: 0;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .pads {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+    .drum-pad {
+      background: linear-gradient(-45deg, $cyanColor, $blueColor, $pinkColor, $redColor);
+      background-size: 500% 500%;
+      animation: bg 15s ease infinite;
+      border-radius: 10px;
+      border: 5px solid #141414;
+      color: $firstColor;
+      font: $fontSecondary;
+      font-size: calc(10px + 2vmin);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      flex-grow: 0;
+      width: 31%;
+      height: 30vh;
+      margin: 1%;
+      outline: 0;
+      overflow: hidden;
+
+      &.on {
+        background: linear-gradient(-45deg, #519548, #88C425, #BEF202, #bada55);
+      }
+    }
+  }
+}
+
+#display {
+  color: #fff;
+  font: $fontSecondary;
+  font-size: calc(10px + 4vmin);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+
+  &.on {
+    animation: display 2s ease-out;
+  }
+}
