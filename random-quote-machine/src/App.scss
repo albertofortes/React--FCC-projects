@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
+// vars
+$fontPrimary: normal 400 10px/1.25 'Montserrat', sans-serif;
+$fontSecondary: normal 400 10px/1.25 'Bitter', serif;;
+$fontAwesome: "Font Awesome 5 Free";
+
+///Breakpoints
+$mobileBreakpoint: 736px;
+
+// layout
+#root {
+  font: $fontPrimary;
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: background 0.7s cubic-bezier(0.47, 0.04, 0.22, 0.92),height 0.2s ease,width 0.2s ease;
+
+  &.bg-1 {
+    background-image: linear-gradient(to top, rgb(48, 207, 208) 0%, rgb(51, 8, 103) 90%);
+  }
+
+  &.bg-2 {
+    background-image: linear-gradient(to top, rgb(210, 153, 194) 0%, rgb(254, 249, 215) 100%);
+    color: rgb(213, 88, 200);
+
+    a,
+    button {
+      color: rgb(213, 88, 200);
+    }
+  }
+
+  &.bg-3 {
+    background-image: linear-gradient(to top, rgb(168, 237, 234) 0%, rgb(254, 214, 227) 100%);
+    color: rgb(86, 43, 124);
+
+    a,
+    button  {
+      color: rgb(86, 43, 124);
+    }
+  }
+
+  &.bg-4 {
+    background-image: linear-gradient(to top, rgb(150, 251, 196) 0%, rgb(249, 245, 134) 100%);
+    color: chocolate;
+
+    a,
+    button  {
+      color: chocolate;
+    }
+  }
+
+  &.bg-5 {
+    background-image: linear-gradient(to top, rgb(136, 211, 206) 0%, rgb(110, 69, 226) 100%);
+  }
+
+  &.bg-6 {
+    background-image: linear-gradient(-20deg, rgb(213, 88, 200) 0%, rgb(36, 210, 146) 100%);
+  }
+
+  &.bg-7 {
+    background-image: linear-gradient(to top, rgb(219, 220, 215) 0%, rgb(221, 220, 215) 24%, rgb(226, 201, 204) 30%, rgb(231, 98, 125) 46%, rgb(184, 35, 90) 59%, rgb(128, 19, 87) 71%, rgb(61, 22, 53) 84%, rgb(28, 26, 39) 100%);
+  }
+
+  &.bg-8 {
+    background-image: linear-gradient(-225deg, rgb(119, 255, 210) 0%, rgb(98, 151, 219) 48%, rgb(30, 236, 255) 100%);
+  }
+
+  &.bg-9 {
+    background-image: linear-gradient(-225deg, rgb(255, 60, 172) 0%, rgb(86, 43, 124) 52%, rgb(43, 134, 197) 100%);
+  }
+
+  a,
+  button  {
+    color: #fff;
+  }
+}
+
+.container {
+  text-align: center;
+  flex: none;
+  width: 100%;
+  max-width: 90%;
+
+  @media screen and (min-width: $mobileBreakpoint) {
+   max-width: 50%;
+  }
+}
+
+#quote-box {
+  position: relative;
+  background-color: rgba(255,255,255,.3);
+  border: 5px solid rgba(255,255,255,.3);
+  font-size: calc(10px + 1vmin);
+  padding: 2rem;
+  font: $fontSecondary;
+  text-align: left;
+  margin: 0 0 10px;
+
+  @media screen and (min-width: $mobileBreakpoint) {
+    border-radius: 15px 15px 15px 0;
+  }
+}
+
+#text {
+  display: flex;
+  margin: 0 0 1rem;
+  font-size: calc(10px + 2vmin);
+
+  &:before {
+    font-family: $fontAwesome;
+    font-weight: 900;
+    content: "\f10d";
+    padding: 0 1rem 0 0;
+  }
+}
+
+#author {
+  font-weight: 300;
+  font-size: calc(10px + .5vmin);
+
+  &:before {
+    content: "-";
+    padding: 0 5px 0 0;
+  }
+}
+
+#new-quote,
+#tweet-quote {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: calc(10px + 1.5vmin);
+  background-color: rgba(255,255,255,.3);
+  border: 5px solid rgba(255,255,255,.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: auto;
+  bottom: -50px;
+  left: 50%;
+  transform: translate(-110%, 100%);
+
+  @media screen and (min-width: $mobileBreakpoint) {
+    top: 0;
+    right: 0;
+    left: auto;
+    transform: translate(100%, -100%);
+  }
+}
+
+#tweet-quote {
+  transform: translate(10%, 100%);
+  text-decoration: none;
+
+  @media screen and (min-width: $mobileBreakpoint) {
+    top: auto;
+    bottom: 0;
+    transform: translate(100%, 100%);
+  }
+}
