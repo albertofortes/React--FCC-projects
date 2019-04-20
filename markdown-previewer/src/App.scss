@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400');
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+
+// vars
+$fontPrimary: normal 400 10px/1.25 'Montserrat', sans-serif;
+$fontSecondary: normal 400 10px/1.25 'Anonymous Pro', monospace;
+$fontTertiary: normal 400 10px/1.25 'Bungee Inline', cursive;
+
+///Breakpoints
+$mobileBreakpoint: 736px;
+
+// colorSchema
+$firstColor: #415153;
+$secondColor: #89CCCC;
+$thirdColor: #B2D6DF;
+$forthColor: #C0B661;
+$fithColor: #FC814B;
+
+.wrapper {
+  font: $fontPrimary;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .textarea-wrapper {
+    box-sizing: border-box;
+    background-color: $thirdColor;
+    width: 100%;
+    height: 30vh;
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      font: $fontTertiary;
+      font-size: calc(10px + 3vmin);
+      color: $fithColor;
+      text-shadow: -5px 5px 0 $forthColor, -10px 10px 0 $secondColor;
+    }
+
+    > textarea {
+      width: 90%;
+      min-height: 12vh;
+      font: $fontSecondary;
+      resize: vertical;
+      font-size: calc(10px + .5vmin);
+      border: 2px solid $secondColor;
+      padding: 1rem;
+      color: $firstColor;
+
+      @media screen and (min-width: $mobileBreakpoint) {
+        width: 80%;
+      }
+
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+}
+
+#preview {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  font-size: calc(10px + 1vmin);
+  overflow: hidden;
+  overflow-y: visible;
+
+  @media screen and (min-width: $mobileBreakpoint) {
+    width: 80%;
+  }
+}
